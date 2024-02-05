@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {MatIconRegistry} from '@angular/material/icon';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'rast-mobile';
+
+
+  constructor(private iconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon('zzz', '../assets/icons/search.svg');
+  }
 }

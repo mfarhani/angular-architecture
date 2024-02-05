@@ -1,0 +1,35 @@
+<div class="list-base-container">
+  <div class="list-header">
+    <div class="search-box">
+      <div class="search-input">
+        <mat-form-field appearance="outline">
+          <mat-label>Search objects...</mat-label>
+          <input type="text" matInput placeholder="Search objects...">
+          <mat-icon matSuffix>zzz</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="filter-btn">
+        <button mat-icon-button>
+          <mat-icon>filter</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="add-new">
+      <button mat-raised-button color="primary">
+        <mat-icon>add</mat-icon>
+        Yeni Hesap Ekle
+      </button>
+    </div>
+  </div>
+  <div class="list-body">
+    <dx-data-grid
+      id="gridContainer"
+      [dataSource]="datasource"
+      keyExpr="ID"
+      [columns]="['CompanyName', 'City', 'State', 'Phone', 'Fax']"
+      [showBorders]="true"
+    >
+    </dx-data-grid>
+  </div>
+  <div class="list-footer"></div>
+</div>
