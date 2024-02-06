@@ -10,5 +10,7 @@ export class SampleMapperService extends ModelMapperBase<ISample> {
   }
 
   mapAssociations(json: any, model: ISample): void {
+    // all primitive properties are mapping in ModelMapperBase
+    // we can implement exception mapping here
   }
 }

@@ -3,7 +3,7 @@
   justify-content: space-around;
   align-items: center;
   height: 70px;
-  padding: 0 10%;
+  padding: 0 5%;
 
   .logo {
     display: flex;
@@ -16,9 +16,28 @@
     justify-content: space-around;
   }
 
-  .social-networks {
-    display: flex;
-    flex-grow: .2;
-    justify-content: space-around;
+
+  .hamburger {
+    display: none;
   }
 }
+
+.social-networks {
+  display: flex;
+  flex-grow: .2;
+  justify-content: space-around;
+}
+
+@media (max-width: 900px) {
+  .header {
+    justify-content: space-between;
+
+    .navbar, .social-networks {
+      display: none !important;
+    }
+  }
+  .hamburger {
+    display: initial !important;
+  }
+}
+

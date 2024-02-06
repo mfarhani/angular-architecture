@@ -1,4 +1,145 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* **** Angular Material styles **** */
+.mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 28px !important;
+  border-radius: 28px !important;
+
+  .mat-icon {
+    border-bottom-right-radius: 28px;
+    border-top-right-radius: 28px;
+    background: #744BFC;
+  }
+}
+
+.mdc-button {
+  border-radius: 28px !important;
+}
+
+.mat-mdc-raised-button {
+  background: #744BFC !important;
+  color: white !important;
+}
+
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline-start {
+  border-radius: 30px !important;
+  border: none !important;
+}
+
+.dense {
+  @include mat.all-component-densities(-2);
+}
+
+.mat-mdc-text-field-wrapper {
+  background-color: white !important;
+  border-bottom: none !important;
+}
+
+.mat-mdc-form-field-focus-overlay {
+  background-color: white !important;
+}
+
+
+/* **** List Base styles **** */
+.list-base-container {
+  padding-top: 24px;
+
+  .list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+
+      .search-input {
+        mat-form-field {
+          width: 380px;
+        }
+      }
+
+      .filter-btn {
+        margin-left: 8px;
+
+        button {
+          background-color: white;
+
+          .mat-icon {
+            transform: scale(.75);
+          }
+        }
+      }
+
+    }
+
+    .add-new {
+      .btn-icon {
+        margin-left: 8px;
+        display: none;
+        background: #744BFC !important;
+        color: white;
+      }
+    }
+  }
+
+  .dx-row-alt {
+    td {
+      background-color: #EFF2FF;
+    }
+  }
+
+}
+
+@media (max-width: 700px) {
+  .list-header {
+    justify-content: start !important;
+
+    .add-new {
+      .btn-text {
+        display: none;
+      }
+
+      .btn-icon {
+        display: initial !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .search-input {
+    mat-form-field {
+      width: 100% !important;
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .filter-btn {
+    display: none;
+  }
+  .add-new {
+    .btn-icon {
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      opacity: .7;
+    }
+  }
+}

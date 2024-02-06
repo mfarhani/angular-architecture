@@ -9,7 +9,8 @@ import {Page} from '../../models/base/page.interface';
 import {Optional} from '../../type-guards/optional';
 import {IResponse} from '../../models/base/response.interface';
 import {createRequestOption} from '../../utils/request-util';
-
+// Implement all methods related to a list of objects
+// All list services inherit ListBaseService
 export abstract class ListBaseService<
   T extends IBaseModel
 > extends BaseService<T> {

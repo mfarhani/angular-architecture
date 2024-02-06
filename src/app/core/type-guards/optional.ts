@@ -1,3 +1,5 @@
+// To ensure we are dealing with undefined only - no null value
+
 export type Optional<T> = T | undefined;
 
 export function isPresent<T>(opt: Optional<T>): opt is T {

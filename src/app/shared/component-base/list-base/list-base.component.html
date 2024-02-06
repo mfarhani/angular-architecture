@@ -2,34 +2,47 @@
   <div class="list-header">
     <div class="search-box">
       <div class="search-input">
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="dense">
           <mat-label>Search objects...</mat-label>
-          <input type="text" matInput placeholder="Search objects...">
-          <mat-icon matSuffix>zzz</mat-icon>
+          <input type="text" matInput placeholder="Search objects..." [formControl]="searchInput">
+          <mat-icon matSuffix svgIcon="search"></mat-icon>
         </mat-form-field>
       </div>
       <div class="filter-btn">
         <button mat-icon-button>
-          <mat-icon>filter</mat-icon>
+          <mat-icon svgIcon="filter"></mat-icon>
         </button>
       </div>
     </div>
     <div class="add-new">
-      <button mat-raised-button color="primary">
+      <button class="btn-text" mat-raised-button (click)="newCallback()">
         <mat-icon>add</mat-icon>
-        Yeni Hesap Ekle
+        <span>{{ addButtonTitle }}</span>
+      </button>
+      <button class="btn-icon" mat-icon-button (click)="newCallback()">
+        <mat-icon>add</mat-icon>
       </button>
     </div>
   </div>
   <div class="list-body">
     <dx-data-grid
       id="gridContainer"
-      [dataSource]="datasource"
-      keyExpr="ID"
-      [columns]="['CompanyName', 'City', 'State', 'Phone', 'Fax']"
+      [dataSource]="filteredDatasource"
+      keyExpr="id"
+      [columns]="columns"
       [showBorders]="true"
+      [rowAlternationEnabled]="true"
     >
+      <dxo-paging [pageSize]="5"></dxo-paging>
+      <dxo-pager
+        [visible]="true"
+        [allowedPageSizes]="allowedPageSizes"
+        [displayMode]="displayMode"
+        [showPageSizeSelector]="showPageSizeSelector"
+        [showInfo]="showInfo"
+        [showNavigationButtons]="showNavButtons"
+      >
+      </dxo-pager>
     </dx-data-grid>
   </div>
-  <div class="list-footer"></div>
 </div>

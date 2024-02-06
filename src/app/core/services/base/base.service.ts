@@ -4,6 +4,9 @@ import {IModelMapper} from '../../models/base/model-mapper.interface';
 import {Optional, toOptional} from '../../type-guards/optional';
 import {IResponse} from '../../models/base/response.interface';
 
+
+// All http services inherit BaseService
+// Implement general configuration here
 export abstract class BaseService<T extends IBaseModel> {
   protected constructor(
     protected baseUrl: string,

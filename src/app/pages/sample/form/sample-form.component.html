@@ -1,0 +1,25 @@
+<div class="sample-form-container">
+  <div class="sample-header">
+    <button mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="sample-body">
+    <mat-form-field class="dense" appearance="outline">
+      <mat-label>Sosyal Medya Linki</mat-label>
+      <input type="text" matInput placeholder="Sosyal Medya Linki" [(ngModel)]="model.socialMediaLink">
+    </mat-form-field>
+    <mat-form-field class="dense" appearance="outline">
+      <mat-label>Sosyal Medya Adı</mat-label>
+      <input type="text" matInput placeholder="Sosyal Medya Adı" [(ngModel)]="model.socialMediaName">
+    </mat-form-field>
+    <mat-form-field class="dense" appearance="outline">
+      <mat-label>Açıklama</mat-label>
+      <input type="text" matInput placeholder="Açıklama" [(ngModel)]="model.description">
+    </mat-form-field>
+  </div>
+  <div class="sample-footer">
+    <button mat-flat-button (click)="save()">Vazgeç</button>&nbsp;
+    <button mat-raised-button (click)="save()">Kaydet</button>
+  </div>
+</div>

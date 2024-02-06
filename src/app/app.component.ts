@@ -11,6 +11,7 @@ export class AppComponent {
 
 
   constructor(private iconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon('zzz', '../assets/icons/search.svg');
+    iconRegistry.addSvgIcon('search', domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/search.svg'));
+    iconRegistry.addSvgIcon('filter', domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/filter.svg'));
   }
 }

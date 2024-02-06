@@ -14,4 +14,25 @@
     <img src="assets/icons/be.svg" alt="">
     <img src="assets/icons/linkedin.svg" alt="">
   </div>
+  <div class="hamburger">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
 </div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Hakkımızda</button>
+  <button mat-menu-item>Jüri - Yarışma Yazılımı</button>
+  <button mat-menu-item>Word Ninja</button>
+  <button mat-menu-item>Word Pyramids</button>
+  <mat-divider></mat-divider>
+  <br>
+  <div class="social-networks">
+    <img src="assets/icons/youtube.svg" alt="">
+    <img src="assets/icons/instagram.svg" alt="">
+    <img src="assets/icons/be.svg" alt="">
+    <img src="assets/icons/linkedin.svg" alt="">
+  </div>
+  <br>
+</mat-menu>

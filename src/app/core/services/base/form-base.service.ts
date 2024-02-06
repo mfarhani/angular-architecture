@@ -6,6 +6,8 @@ import {BaseService} from './base.service';
 import {IModelMapper} from '../../models/base/model-mapper.interface';
 import {Optional} from '../../type-guards/optional';
 
+// Implement all methods related to a single object here
+// All CRUD services inherit CRUDBaseService
 export abstract class CrudBaseService<
   T extends IBaseModel
 > extends BaseService<T> {

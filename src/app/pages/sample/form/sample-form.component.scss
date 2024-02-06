@@ -1,0 +1,19 @@
+.sample-form-container {
+  padding: 8px;
+
+  .sample-header {
+    display: flex;
+    justify-content: end;
+    height: 70px;
+  }
+
+  .sample-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sample-footer {
+    display: flex;
+    justify-content: end;
+  }
+}

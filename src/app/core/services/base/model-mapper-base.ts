@@ -2,6 +2,9 @@ import {Type} from '@angular/core';
 import {IBaseModel} from '../../models/base/base-model.interface';
 import {IModelMapper} from '../../models/base/model-mapper.interface';
 
+// A generic mapper to map pure json to an entity we know in client
+// All entities have a mapper which inherits ModelMapperBase
+// By passing the interface and model we can instantiate the entity here
 export abstract class ModelMapperBase<T extends IBaseModel>
   implements IModelMapper<T> {
   protected constructor(public modelClass: Type<T>) {

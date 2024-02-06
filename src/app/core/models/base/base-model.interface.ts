@@ -1,3 +1,5 @@
+// All interfaces in entire project must implement IBaseModel
+
 export interface IBaseModel {
   id?: ID;
 
